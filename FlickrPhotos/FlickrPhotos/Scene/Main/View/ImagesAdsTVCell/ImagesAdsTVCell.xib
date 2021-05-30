@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagesAdsTVCell" id="KGk-i7-Jjw" customClass="ImagesAdsTVCell" customModule="FlickrPhotos" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gSC-Lz-XCN">
+                        <rect key="frame" x="16" y="2" width="288" height="40"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Fw-JH-PRs">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cDg-W2-NyO">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad-sample-900x225" translatesAutoresizingMaskIntoConstraints="NO" id="7Lb-6I-vsd" userLabel="unnamed.gif">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="cDg-W2-NyO" firstAttribute="leading" secondItem="7Fw-JH-PRs" secondAttribute="leading" id="D4T-cN-1nD"/>
+                                    <constraint firstAttribute="bottom" secondItem="cDg-W2-NyO" secondAttribute="bottom" id="KkM-j2-egJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="cDg-W2-NyO" secondAttribute="trailing" id="Kvp-gW-ArU"/>
+                                    <constraint firstItem="cDg-W2-NyO" firstAttribute="top" secondItem="7Fw-JH-PRs" secondAttribute="top" id="uRM-kh-FT7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="gSC-Lz-XCN" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.9" id="Kaa-Qo-e6A"/>
+                    <constraint firstItem="gSC-Lz-XCN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TKw-0x-ULS"/>
+                    <constraint firstItem="gSC-Lz-XCN" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Tb4-j0-kvN"/>
+                    <constraint firstItem="gSC-Lz-XCN" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.9" id="ebx-QD-2b9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="img" destination="7Lb-6I-vsd" id="uIG-15-AMt"/>
+                <outlet property="mainView" destination="7Fw-JH-PRs" id="v8P-tX-8Jz"/>
+            </connections>
+            <point key="canvasLocation" x="-29" y="80"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ad-sample-900x225" width="800" height="200"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
