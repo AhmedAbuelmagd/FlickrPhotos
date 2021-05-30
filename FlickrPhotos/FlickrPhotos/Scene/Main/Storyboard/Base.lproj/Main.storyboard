@@ -57,8 +57,79 @@
             </objects>
             <point key="canvasLocation" x="-30.434782608695656" y="63.616071428571423"/>
         </scene>
+        <!--Image ViewerVC-->
+        <scene sceneID="mqK-M8-5G2">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewerVC" id="Boz-r0-nfa" customClass="ImageViewerVC" customModule="ProfileTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mVJ-sx-cqL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfE-Hx-Y4d">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-ey-gy8">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Owh-ey-gy8" firstAttribute="top" secondItem="JfE-Hx-Y4d" secondAttribute="top" id="00S-x6-K2G"/>
+                                    <constraint firstAttribute="bottom" secondItem="Owh-ey-gy8" secondAttribute="bottom" id="Kdk-dO-fbe"/>
+                                    <constraint firstItem="Owh-ey-gy8" firstAttribute="leading" secondItem="JfE-Hx-Y4d" secondAttribute="leading" id="Lji-wj-hJ1"/>
+                                    <constraint firstItem="Owh-ey-gy8" firstAttribute="height" secondItem="JfE-Hx-Y4d" secondAttribute="height" id="QRX-gh-aUw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Owh-ey-gy8" secondAttribute="trailing" id="ncM-DG-v0W"/>
+                                    <constraint firstItem="Owh-ey-gy8" firstAttribute="width" secondItem="JfE-Hx-Y4d" secondAttribute="width" id="u6V-Hz-JiS"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o79-vq-owz">
+                                <rect key="frame" x="16" y="49" width="62" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="o79-vq-owz" secondAttribute="height" multiplier="1:1" id="tSE-2m-ozR"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="closeBtnClicked:" destination="Boz-r0-nfa" eventType="touchUpInside" id="t8g-Rt-dee"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="von-QX-SgS">
+                                <rect key="frame" x="336" y="49" width="62" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="von-QX-SgS" secondAttribute="height" multiplier="1:1" id="Lan-kc-RyL"/>
+                                </constraints>
+                                <state key="normal" image="share"/>
+                                <connections>
+                                    <action selector="shareBtnClicked:" destination="Boz-r0-nfa" eventType="touchUpInside" id="WOq-fr-vh7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="n8Z-fK-s14"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="JfE-Hx-Y4d" secondAttribute="bottom" id="2hK-xQ-tmc"/>
+                            <constraint firstItem="von-QX-SgS" firstAttribute="centerY" secondItem="o79-vq-owz" secondAttribute="centerY" id="7Gm-Jl-eaQ"/>
+                            <constraint firstItem="JfE-Hx-Y4d" firstAttribute="leading" secondItem="n8Z-fK-s14" secondAttribute="leading" id="8lC-2O-mpB"/>
+                            <constraint firstItem="n8Z-fK-s14" firstAttribute="trailing" secondItem="von-QX-SgS" secondAttribute="trailing" constant="16" id="PtG-vM-XH1"/>
+                            <constraint firstItem="JfE-Hx-Y4d" firstAttribute="top" secondItem="mVJ-sx-cqL" secondAttribute="top" id="T0A-9u-sAI"/>
+                            <constraint firstItem="von-QX-SgS" firstAttribute="width" secondItem="o79-vq-owz" secondAttribute="width" id="VLp-Qe-TTf"/>
+                            <constraint firstItem="o79-vq-owz" firstAttribute="leading" secondItem="n8Z-fK-s14" secondAttribute="leading" constant="16" id="cCm-56-ypp"/>
+                            <constraint firstItem="JfE-Hx-Y4d" firstAttribute="trailing" secondItem="n8Z-fK-s14" secondAttribute="trailing" id="hmy-AJ-O2Q"/>
+                            <constraint firstItem="o79-vq-owz" firstAttribute="width" secondItem="mVJ-sx-cqL" secondAttribute="width" multiplier="0.149758" id="n1N-gs-v4I"/>
+                            <constraint firstItem="o79-vq-owz" firstAttribute="top" secondItem="n8Z-fK-s14" secondAttribute="top" constant="5" id="sbz-gC-IMn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="img" destination="Owh-ey-gy8" id="dil-fi-RS8"/>
+                        <outlet property="scrollView" destination="JfE-Hx-Y4d" id="qWT-v2-MWI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHb-QQ-jHw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1743" y="64"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="close" width="16.5" height="16.5"/>
+        <image name="share" width="15.5" height="18"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

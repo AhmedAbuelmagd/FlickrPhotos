@@ -49,7 +49,6 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         if (indexPath.row % 5 == 0) {
             return CGFloat(tableView.frame.width * 0.3)
         } else {
@@ -57,6 +56,11 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if !(indexPath.row % 5 == 0) {
+            let vc = ImageViewerVC.create()
+            vc.photo = viewModel.photosData.value?[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }
 //MARK:- UI Table View Data Source Prefetching
