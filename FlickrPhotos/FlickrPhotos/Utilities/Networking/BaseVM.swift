@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RxCocoa
 
 protocol BaseVMProtocol {
-    var showLoading: Bindable<Bool> { get set }
+    var showLoading: BehaviorRelay<Bool> { get set }
     var onShowError: ((_ alert: String) -> Void)?  { get set }
 }

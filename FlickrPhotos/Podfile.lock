@@ -10,11 +10,19 @@ PODS:
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.2)
 
 DEPENDENCIES:
   - Kingfisher
   - Moya
   - NVActivityIndicatorView
+  - RxCocoa (~> 5.1.0)
+  - RxSwift (~> 5.1.0)
 
 SPEC REPOS:
   trunk:
@@ -22,13 +30,19 @@ SPEC REPOS:
     - Kingfisher
     - Moya
     - NVActivityIndicatorView
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
 
-PODFILE CHECKSUM: 54ef654d5f6479a76d9a110a75c3ce67e10c8c3f
+PODFILE CHECKSUM: 18453c47ca8e9f4215e488df9c7e23ebac7a8af8
 
 COCOAPODS: 1.10.0

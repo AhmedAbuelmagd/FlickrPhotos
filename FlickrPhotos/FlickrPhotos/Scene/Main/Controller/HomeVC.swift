@@ -6,23 +6,26 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeVC: UIViewController {
     //MARK: - Variables & Constants
     let viewModel = HomeVM()
-    
+    let disposeBag = DisposeBag()
     //MARK: - Outlets
     @IBOutlet weak var imagesTV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initScreen()
+    }
+    func initScreen(){
         initTV(imagesTV)
         viewModel.text = "Color"
         title = TITLES.HOME.rawValue
         bindViewModel()
         viewModel.getPhotos()
     }
-    
     func initTV(_ TV:UITableView){
         TV.dataSource = self
         TV.delegate = self
@@ -42,7 +45,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             let cell = tableView.dequeue() as ImagesTVCell
-            if let data = viewModel.photosData.value?[indexPath.row - (indexPath.row / 5)]{
+            if let data = viewModel.photosData.value?[indexPath.row - (1)]{
                 cell.initCell(cellData: data)
             }
             return cell
@@ -58,7 +61,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !(indexPath.row % 5 == 0) {
             let vc = ImageViewerVC.create()
-            vc.photo = viewModel.photosData.value?[indexPath.row]
+            vc.photo = viewModel.photosData.value?[indexPath.row - 1]
             self.present(vc, animated: true, completion: nil)
         }
     }
@@ -77,16 +80,16 @@ extension HomeVC {
             if self != nil {
                 visible ? showLoaderForController(getCurrentVC() ?? UIViewController()) : hideLoaderForController(getCurrentVC() ?? UIViewController())
             }
-        }
+        }.disposed(by: disposeBag)
         
         // bind error message
         viewModel.onShowError = { message in
             print(message)
         }
-        
+        // bind photosData model
         viewModel.photosData.bind {[weak self] albums in
             self?.imagesTV.reloadData()
-        }
+        }.disposed(by: disposeBag)
     }
 }
 

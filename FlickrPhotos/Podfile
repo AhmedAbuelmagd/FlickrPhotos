@@ -9,6 +9,8 @@ target 'FlickrPhotos' do
     pod 'Moya'
     pod 'NVActivityIndicatorView'
     pod 'Kingfisher'
+    pod 'RxSwift', '~> 5.1.0'
+    pod 'RxCocoa', '~> 5.1.0'
 
   target 'FlickrPhotosTests' do
     inherit! :search_paths
